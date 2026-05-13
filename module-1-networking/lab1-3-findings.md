@@ -61,7 +61,7 @@ WireGuard uses public and private key pairs for authentication.
 The private key stays secret on each VM, while the public key is shared with the peer VM.
 ss
 
-##Experiment 3: WireGuard Interface Before Handshake
+## Experiment 3: WireGuard Interface Before Handshake
 Command used on VM1: sudo wg show
 Output observed
 Before VM2 connected, VM1 showed the WireGuard interface and peer details, but no active handshake yet.
@@ -97,7 +97,7 @@ The latest handshake confirms that both VMs successfully authenticated each othe
 
 Screenshots
 
-##Experiment 5: Tunnel Ping Test
+## Experiment 5: Tunnel Ping Test
 Command used on VM2
 ```
 ping -c 4 10.0.0.1
@@ -116,7 +116,7 @@ The successful ping confirms that VM2 can reach VM1 using the private VPN tunnel
 
 Screenshot
 
-##Experiment 6: Encrypted UDP Traffic Capture
+## Experiment 6: Encrypted UDP Traffic Capture
 -Command used on VM1
 ```
 sudo tcpdump -i any udp port 51820
@@ -143,7 +143,7 @@ This proves that the traffic between VM1 and VM2 was encrypted inside the WireGu
 Screenshots
 
 ##WireGuard to ZTNA Component Mapping
-```text
+
 | WireGuard Lab Component | ZTNA Component                               |
 | ----------------------- | -------------------------------------------- |
 | VM2 Client              | User device / Agent                          |
@@ -153,7 +153,7 @@ Screenshots
 | AllowedIPs              | Access policy / permitted routes             |
 | Handshake               | Secure session establishment                 |
 | UDP 51820 traffic       | Encrypted tunnel traffic                     |
-```
+
 
 
 
