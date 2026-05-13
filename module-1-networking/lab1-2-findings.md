@@ -34,4 +34,14 @@ Nginx Web Server and Self-Signed TLS Certificate Setup
 
 ![Certificate Inspection Screenshot](../screenshots/lab1-2-cert-inspection.png)
 
+## Explanation: Why curl without -k fails
+
+When I use HTTPS with a self-signed TLS certificate, the connection is encrypted, but the certificate is not trusted by default.
+
+A normal trusted HTTPS certificate is issued by a trusted Certificate Authority. In this lab, I created the certificate myself using OpenSSL, so it is self-signed. Because of this, curl cannot verify that the certificate came from a trusted authority.
+
+The `-k` option tells curl to skip certificate verification. That is why this command works:
+
+```bash
+
 
