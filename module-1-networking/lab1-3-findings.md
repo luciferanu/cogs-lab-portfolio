@@ -41,7 +41,8 @@ Output observed
 
 WireGuard was successfully installed on both VM1 and VM2.
 Version observed:
-ss
+![WireGuard Installation Screenshot](../screenshots/lab1-3-wireguard-install.png)
+
 ## Experiment 2: Key Generation on Both VMs
 - VM1 Server key generation command:
  ``` 
@@ -59,14 +60,18 @@ VM2 public key: TZX9fMlmL0nvERZ8attnuvGKw5RXkXK2yu66b6cCdEw=
 Explanation
 WireGuard uses public and private key pairs for authentication.
 The private key stays secret on each VM, while the public key is shared with the peer VM.
-ss
+
+![Key Generation Screenshot 1](../screenshots/lab1-3-key-generation1.png)
+
+![Key Generation Screenshot 2](../screenshots/lab1-3-key-generation2.png)
 
 ## Experiment 3: WireGuard Interface Before Handshake
 Command used on VM1: sudo wg show
 Output observed
 Before VM2 connected, VM1 showed the WireGuard interface and peer details, but no active handshake yet.
 
-Screenshot
+![VM1 Before Handshake Screenshot](../screenshots/lab1-3-wg-show-vm1-before-handshake.png)
+
 ## Experiment 4: WireGuard Active Handshake
 Command used on VM1 and VM2
 ```
@@ -95,7 +100,9 @@ Explanation
 
 The latest handshake confirms that both VMs successfully authenticated each other and the WireGuard tunnel became active.
 
-Screenshots
+![VM1 Handshake Screenshot](../screenshots/lab1-3-wg-show-vm1-handshake.png)
+
+![VM2 Handshake Screenshot](../screenshots/lab1-3-wg-show-vm2-handshake.png)
 
 ## Experiment 5: Tunnel Ping Test
 Command used on VM2
@@ -114,7 +121,7 @@ This ping was sent from VM2 to VM1 through the encrypted WireGuard tunnel.
 
 The successful ping confirms that VM2 can reach VM1 using the private VPN tunnel network.
 
-Screenshot
+![Tunnel Ping Screenshot](../screenshots/lab1-3-ping-tunnel.png)
 
 ## Experiment 6: Encrypted UDP Traffic Capture
 -Command used on VM1
@@ -140,7 +147,9 @@ The tcpdump output showed UDP packets, but the actual ping data was not readable
 
 This proves that the traffic between VM1 and VM2 was encrypted inside the WireGuard tunnel.
 
-Screenshots
+![Tcpdump Screenshot Part 1](../screenshots/lab1-3-tcpdump.png)
+
+![Tcpdump Screenshot Part 2](../screenshots/lab1-3-tcpdump2.png)
 
 ## WireGuard to ZTNA Component Mapping
 
