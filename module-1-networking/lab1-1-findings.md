@@ -41,32 +41,32 @@ Yes, they are different. The default DNS resolver returned 192.178.25.14, while 
   1. Experiment 1: Ping Test
  #### Screenshot
 
-![Ping Test Screenshot](screenshots/ping.png)
+![Ping Test Screenshot](../screenshots/ping.png)
 
   2.  EXPERIMENT 2: Traceroute
 #### Screenshot
 
-![Traceroute Screenshot](screenshots/traceroute.png)
+![Traceroute Screenshot](../screenshots/traceroute.png)
 
 3. EXPERIMENT 3: DNS Investigation
    #### Screenshot
 
-![DNS Lookup Screenshot](screenshots/nslookup.png)
+![DNS Lookup Screenshot](../screenshots/nslookup.png)
 
 4.  EXPERIMENT 4: Port Scanning
    #### Screenshot
 
-![Nmap Screenshot](screenshots/nmap.png)
+![Nmap Screenshot](../screenshots/nmap.png)
 
 5. EXPERIMENT 5: TCP Connection Test
    #### Screenshot
 
-![Curl Screenshot](screenshots/curl.png)
+![Curl Screenshot](../screenshots/curl.png)
 
    
 6.  EXPERIMENT 6: SSL Certificate Inspection
  #### Screenshot
 
-![TLS Certificate Screenshot](screenshots/certificate.png)  
+![TLS Certificate Screenshot](../screenshots/certificate.png) 
 
 
