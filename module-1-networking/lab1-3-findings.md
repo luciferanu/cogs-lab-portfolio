@@ -35,6 +35,7 @@ WireGuard VPN — Build Your Own Encrypted Tunnel
 ```bash
 sudo apt update && sudo apt install -y wireguard
 wg --version
+```
 
 Output observed
 
