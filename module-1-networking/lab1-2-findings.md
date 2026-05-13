@@ -16,11 +16,11 @@ Nginx Web Server and Self-Signed TLS Certificate Setup
 
 ## Experiment 1: Nginx HTTP Test
 
-### Commands Used
 
-```bash
-curl http://localhost
-curl http://16.170.245.80
-### Screenshot
+## Experiment 2: Self-Signed Certificate Creation
 
-![HTTP Test Screenshot](../screenshots/lab1-2-http-test.png)
+## Experiment 3: Nginx HTTPS Configuration Test
+## Experiment 4: HTTPS Test
+## Experiment 5: TLS Certificate Inspection
+
+
