@@ -39,7 +39,10 @@ Yes, they are different. The default DNS resolver returned 192.178.25.14, while 
 - TLS version used: TLSv1.3
   Experments:
   1. Experiment 1: Ping Test
-  <img width="587" height="350" alt="image" src="https://github.com/user-attachments/assets/926e1d4a-3630-4cc2-a6cd-1493c2b6ecca" />
+ #### Screenshot
+
+![Ping Test Screenshot](screenshots/ping.png)
+
   2.  EXPERIMENT 2: Traceroute
 <img width="1200" height="318" alt="traceroute" src="https://github.com/user-attachments/assets/e2b28eec-82fa-4e60-a864-981cd0456942" />
 
