@@ -142,7 +142,7 @@ This proves that the traffic between VM1 and VM2 was encrypted inside the WireGu
 
 Screenshots
 
-##WireGuard to ZTNA Component Mapping
+## WireGuard to ZTNA Component Mapping
 
 | WireGuard Lab Component | ZTNA Component                               |
 | ----------------------- | -------------------------------------------- |
