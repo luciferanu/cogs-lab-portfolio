@@ -67,7 +67,7 @@ Output observed
 Before VM2 connected, VM1 showed the WireGuard interface and peer details, but no active handshake yet.
 
 Screenshot
-##Experiment 4: WireGuard Active Handshake
+## Experiment 4: WireGuard Active Handshake
 Command used on VM1 and VM2
 ```
 sudo wg show
