@@ -52,7 +52,7 @@ wg genkey | sudo tee /etc/wireguard/client_private.key | wg pubkey | sudo tee /e
 sudo cat /etc/wireguard/client_public.key
 VM2 public key: TZX9fMlmL0nvERZ8attnuvGKw5RXkXK2yu66b6cCdEw=
 
-#Explanation
+Explanation
 WireGuard uses public and private key pairs for authentication.
 The private key stays secret on each VM, while the public key is shared with the peer VM.
 ss
