@@ -43,9 +43,11 @@ WireGuard was successfully installed on both VM1 and VM2.
 Version observed:
 ss
 ## Experiment 2: Key Generation on Both VMs
-- VM1 Server key generation command: 
+- VM1 Server key generation command:
+ ``` 
 wg genkey | sudo tee /etc/wireguard/server_private.key | wg pubkey | sudo tee /etc/wireguard/server_public.key
 sudo cat /etc/wireguard/server_public.key
+```
 VM1 public key: HRqcenbsqrWSl4MHznf1NhiyValKi4nP5TCUjOxNbiM=
 - VM2 Client key generation command: 
 wg genkey | sudo tee /etc/wireguard/client_private.key | wg pubkey | sudo tee /etc/wireguard/client_public.key
