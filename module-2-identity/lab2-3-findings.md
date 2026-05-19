@@ -84,7 +84,8 @@ The script generated:
 -A QR code image
 -A current 6-digit OTP
 -Remaining validity time
-Screenshot
+
+![TOTP Generated](../screenshots/lab2-3-totp-generated.png)
 
 ## Experiment 3: QR Code Enrollment
 QR Code
@@ -94,7 +95,7 @@ The QR code was generated at:
 ```
 The QR code was copied to the local machine and scanned using Google Authenticator.
 
-Screenshot
+![TOTP QR Code](../screenshots/lab2-3-qr-code.png)
 
 Note
 
@@ -108,7 +109,7 @@ A live OTP display script was used to continuously show the current OTP and rema
 
 The terminal displayed the current OTP and countdown timer.
 
-Screenshot
+![Terminal Live OTP](../screenshots/lab2-3-terminal-live-otp.png)
 
 ## Experiment 5: OTP Verification and Rotation
 ### Script Used
@@ -149,7 +150,7 @@ OTP changed: True
 
 The correct OTP was successfully verified, while an incorrect OTP failed verification. After waiting 31 seconds, the OTP changed, confirming that TOTP codes rotate based on time intervals.
 
-Screenshot
+![TOTP Verification and Rotation](../screenshots/lab2-3-totp-verification-and-rotation.png)
 
 ## Root Cause Analysis: Why OTP Fails
 An OTP can fail even if the user enters a code from their authenticator app. Common reasons include:
