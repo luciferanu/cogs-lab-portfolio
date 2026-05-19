@@ -30,6 +30,7 @@ louislam/uptime-kuma:1
 After deployment, the Uptime Kuma web dashboard was accessed on port 3001 using the VM public IP.
 
 Screenshot evidence:
+![Uptime Kuma Dashboard](../screenshots/lab3-1-uptime-kuma-dashboard.png)
 
 ## Step 2 — Monitor Creation
 
@@ -42,6 +43,7 @@ Three monitors were created in Uptime Kuma:
 After creating the monitors, the monitors were verified from the Uptime Kuma dashboard.
 
 Screenshot evidence:
+![Three Green Monitors](../screenshots/lab3-1-three-green-monitors.png)
 
 ## Step 3 — Failure Simulation
 
@@ -54,6 +56,7 @@ sudo systemctl stop nginx
 After nginx was stopped, Uptime Kuma detected the failure and marked the Lab Nginx Server monitor as down.
 
 Screenshot evidence:
+![Nginx Down Alert](../screenshots/lab3-1-red-alert-nginx-down.png)
 
 ## Step 4 — Recovery Verification
 
@@ -66,6 +69,7 @@ sudo systemctl start nginx
 After nginx was restored, Uptime Kuma detected the recovery and the monitor returned to up status.
 
 Screenshot evidence:
+![Recovery Green](../screenshots/lab3-1-recovery-green.png)
 ## Mapping Uptime Kuma Monitor Types to Site24x7
 | Uptime Kuma Monitor Type     | Similar Site24x7 Monitor Type         | Use Case                                                                                    |
 | ---------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------- |
