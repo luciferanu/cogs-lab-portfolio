@@ -51,7 +51,12 @@ Explanation
 
 Keycloak was deployed using Docker in development mode. The admin user was created using environment variables, and HTTP access was enabled for lab testing.
 
-Screenshot
+![Keycloak Welcome Page](../screenshots/lab2-2-keycloak-welcome.png)
+
+![Keycloak Admin Console](../screenshots/lab2-2-keycloak-admin-console-new-ip.png)
+
+![Keycloak Docker Logs](../screenshots/lab2-2-keycloak-docker-logs.png)
+
 ## Experiment 2: Create Realm, User, and Group
 ### Realm Created
 ```
@@ -77,7 +82,15 @@ The user testuser was added to the support-team group.
 
 The realm represents a separate identity domain. The user and group simulate how enterprise users are managed in an Identity Provider before being used for SSO authentication.
 
-Screenshots
+![Realm Dashboard](../screenshots/lab2-2-realm-dashboard.png)
+
+![User Created](../screenshots/lab2-2-user-created.png)
+
+![User Password Set](../screenshots/lab2-2-user-password-set.png)
+
+![Group Created](../screenshots/lab2-2-group-created.png)
+
+![User Added To Group](../screenshots/lab2-2-user-added-to-group.png)
 
 ## Experiment 3: API Token Verification
 Command Used
@@ -104,7 +117,7 @@ email: testuser@instasafe.local
 
 The successful token response confirms that the user authentication worked through Keycloak. This simulates how an application or agent can authenticate a user through an Identity Provider.
 
-Screenshot
+![API Token Verification](../screenshots/lab2-2-api-token-verification.png)
 
 Experiment 4: Configure SAML Client
 SAML Client Details
@@ -122,7 +135,7 @@ Master SAML Processing URL: http://13.60.163.172:9090/saml/callback
 
 The SAML client simulates InstaSafe acting as a Service Provider. Keycloak acts as the Identity Provider and sends authentication responses to the configured callback URL.
 
-Screenshot
+![SAML Client Created](../screenshots/lab2-2-saml-client-created.png)
 
 ## Experiment 5: Configure Attribute Mappers
 ### Mappers Configured
@@ -136,7 +149,7 @@ Attribute mappers decide which user attributes are included in the SAML response
 
 These attributes are important because SSO applications often use them for user identification and access control.
 
-Screenshot
+![SAML Mappers](../screenshots/lab2-2-saml-mappers.png)
 
 ## Experiment 6: Download IdP Metadata
 Command Used
@@ -153,7 +166,7 @@ The metadata XML file was downloaded successfully.
 
 The IdP metadata XML contains the Keycloak SAML configuration details. In a real SSO setup, this metadata file is shared with the Service Provider so that it can trust the Identity Provider.
 
-Screenshot
+![Keycloak Admin Console](../screenshots/lab2-2-keycloak-admin-console-new-ip.png)
 
 ### Troubleshooting Note
 
