@@ -86,3 +86,31 @@ openssl s_client -connect localhost:443 -tls1_3 2>/dev/null | grep 'Protocol'
 Observed result:
 
 Protocol: TLSv1.3
+
+---
+
+## Rollback Test Evidence
+
+A failed change scenario was simulated by adding an invalid directive to the Nginx configuration.
+
+Failure command used:
+
+```bash
+echo "bad_directive_here;" | sudo tee -a /etc/nginx/nginx.conf
+sudo nginx -t
+```
+### Observed result:
+```
+nginx configuration test failed due to invalid directive
+```
+### Rollback command used:
+```
+sudo cp /etc/nginx/nginx.conf.before-failure-test /etc/nginx/nginx.conf
+sudo nginx -t
+sudo systemctl reload nginx
+sudo systemctl status nginx --no-pager
+```
+### Observed rollback result:
+
+nginx configuration syntax was OK, test was successful, and Nginx returned to active/running state.
+
