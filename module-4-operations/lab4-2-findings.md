@@ -32,6 +32,8 @@ File created:
 ```text
 module-4-operations/handovers/handover-2026-04-08-1800.md
 ```
+![PACE handover file](../screenshots/lab4-2-pace-handover-file.png)
+
 Step 2 — Post-Incident Report
 
 A Post-Incident Report was created for the simulated MFA bulk OTP failure incident.
@@ -50,6 +52,9 @@ File created:
 ```text
 module-4-operations/pirs/PIR-2026-04-08-MFA-Bulk-Failure.md
 ```
+module-4-operations/pirs/PIR-2026-04-08-MFA-Bulk-Failure.md
+
+
 ## PACE Handover Learning
 
 The PACE handover helped organize shift transition information clearly. It ensured that the incoming engineer could quickly understand which tickets were urgent, what actions were pending, what context was already known, and what outcomes were expected.
