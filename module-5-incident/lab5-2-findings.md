@@ -39,6 +39,8 @@ Risk assessment
 Maintenance window
 Approval status
 
+![Change plan committed](../screenshots/lab5-2-change-plan-committed2.png)
+
 ## Step 2 — Nginx Configuration Test Successful
 
 After updating the TLS configuration, the Nginx configuration was tested using:
