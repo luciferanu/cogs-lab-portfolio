@@ -52,7 +52,7 @@ File created:
 ```text
 module-4-operations/pirs/PIR-2026-04-08-MFA-Bulk-Failure.md
 ```
-module-4-operations/pirs/PIR-2026-04-08-MFA-Bulk-Failure.md
+![PIR file](../screenshots/lab4-2-pir-file.png)
 
 
 ## PACE Handover Learning
