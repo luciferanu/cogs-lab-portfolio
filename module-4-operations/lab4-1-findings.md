@@ -48,6 +48,8 @@ Product labels:
 
 A milestone named Sprint 1 — Lab Tickets was created.
 
+![Labels created](../screenshots/lab4-1-labels-created.png.png)
+
 A GitHub Project board was also created with the following columns:
 
 Backlog
@@ -55,6 +57,8 @@ In Progress
 Waiting on Customer
 Resolved
 Closed
+
+![Empty project board](../screenshots/lab4-1-project-board-empty.png)
 
 ## Step 2 — Mock Support Tickets Created
 
@@ -94,9 +98,17 @@ P4-Low
 product:ztna
 status:waiting-on-customer
 
+![Three tickets created](../screenshots/lab4-1-three-tickets-created.png)
+
 ### Step 3 — Ticket Lifecycle Simulation
 
 Ticket 1 was used to simulate a full support ticket lifecycle.
+
+![Ticket 1 lifecycle part 1](../screenshots/lab4-1-ticket1-full-lifecycle.png)
+
+![Ticket 1 lifecycle part 2](../screenshots/lab4-1-ticket1-full-lifecycle2.png)
+
+![Ticket 1 lifecycle part 3](../screenshots/lab4-1-ticket1-full-lifecycle3.png)
 
 The lifecycle included:
 
@@ -123,6 +135,8 @@ Final ticket status:
 | MFA SMS OTP not delivered       | Closed              |
 | AD sync delay suspected         | Waiting on Customer |
 | Second gateway guidance request | Waiting on Customer |
+
+![Final project board](../screenshots/lab4-1-project-board-final.png)
 
 ### Support Workflow Learning
 
