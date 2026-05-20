@@ -4,7 +4,7 @@
 
 **Change ID:** CHANGE-001  
 **Type:** Normal Change  
-**Status:** Pending Approval  
+**Status:** Pending 
 **Service:** Nginx TLS Configuration  
 **Environment:** Lab EC2 Ubuntu VM  
 
@@ -67,4 +67,22 @@ Customer Impact: No real customer impact because this is a lab environment
 
 ## Approval
 
-Approval Status: Pending Approval
+Approval Status: Approved and Implemented
+This change plan must be committed before execution.
+
+---
+
+## Implementation Evidence
+
+The Nginx configuration was updated and tested successfully.
+
+Validation commands used:
+
+```bash
+sudo nginx -t
+sudo systemctl reload nginx
+openssl s_client -connect localhost:443 -tls1_3 2>/dev/null | grep 'Protocol'
+```
+Observed result:
+
+Protocol: TLSv1.3
