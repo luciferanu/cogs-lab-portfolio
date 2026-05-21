@@ -34,6 +34,8 @@ WireGuard IP: 10.0.0.1
 
 VM1 was used as the backend application server. Nginx was already running on VM1 and served the lab application page.
 
+![Nginx proxy test success](../screenshots/capstone-nginx-proxy-test-success.png)
+
 VM1 backend response:
 ```text
 <h1>COGS Lab - TLS Demo</h1><p>Hello from InstaSafe Support Lab!</p>
@@ -77,6 +79,8 @@ The proxy path was tested from VM2 using curl.
 ```text
 curl http://localhost/app/
 ```
+![Proxy terminal proof](../screenshots/capstone-proxy-terminal-proof.png)
+
 ### Observed response:
 
 <h1>COGS Lab - TLS Demo</h1><p>Hello from InstaSafe Support Lab!</p>
@@ -87,6 +91,8 @@ The proxy was also tested from the browser using:
 
 -> http://13.60.52.60/app/
 
+![Proxy app working](../screenshots/capstone-proxy-app-working.png)
+
 ## Step 4 — Monitoring with Uptime Kuma
 
 A Uptime Kuma monitor was created to monitor the VM2 proxy URL:
@@ -94,6 +100,8 @@ A Uptime Kuma monitor was created to monitor the VM2 proxy URL:
 -> http://13.60.52.60/app/
 
 The monitor showed UP/green, confirming that the gateway proxy path was reachable.
+
+![Uptime Kuma proxy green](../screenshots/capstone-uptime-kuma-proxy-green.png)
 
 ### Result
 
@@ -118,4 +126,5 @@ Troubleshooting AWS security group access
 Validating service paths using curl and browser testing
 
 The key learning was that the proxy can work locally on the VM but still fail from the browser if AWS Security Group inbound rules do not allow the required port.
+
 
