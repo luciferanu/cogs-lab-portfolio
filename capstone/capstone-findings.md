@@ -125,6 +125,16 @@ Uptime Kuma monitoring
 Troubleshooting AWS security group access
 Validating service paths using curl and browser testing
 
+---
+
+## GitHub Documentation Evidence
+
+The capstone findings file was created and committed in the GitHub portfolio.
+
+![Capstone findings file](../screenshots/capstone-findings-file.png)
+
+![Capstone findings file continued](../screenshots/capstone-findings-file2.png)
+
 The key learning was that the proxy can work locally on the VM but still fail from the browser if AWS Security Group inbound rules do not allow the required port.
 
 
