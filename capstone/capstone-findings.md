@@ -149,17 +149,6 @@ The architecture simulated a simplified zero-trust gateway pattern where:
 
 VM2 accepted the public HTTP request and forwarded it to VM1 using the private AWS network.
 
-### What I Learned
-
-This capstone helped combine multiple concepts from earlier labs:
-
-EC2 VM networking
-Nginx reverse proxy
-Private IP communication between VMs
-Gateway/backend architecture
-Uptime Kuma monitoring
-Troubleshooting AWS security group access
-Validating service paths using curl and browser testing
 
 ---
 
@@ -169,8 +158,26 @@ The capstone findings file was created and committed in the GitHub portfolio.
 
 ![Capstone findings file](../screenshots/capstone-findings-file.png)
 
+
+
 ![Capstone findings file continued](../screenshots/capstone-findings-file2.png)
 
 The key learning was that the proxy can work locally on the VM but still fail from the browser if AWS Security Group inbound rules do not allow the required port.
 
+# 500-Word Reflection — What I Learned from the Capstone
 
+This capstone lab helped connect all the concepts from the earlier modules into a single operational workflow. Earlier labs focused on individual technologies such as networking, TLS, Keycloak, monitoring, incident response, and change management. The capstone demonstrated how these technologies interact together in a realistic support-engineering environment.
+
+The most important learning was understanding the role of a gateway architecture. VM2 acted as the externally accessible gateway while VM1 acted as the protected backend application server. The reverse proxy configuration showed how external users can interact with internal services without directly exposing the backend system to the public internet. This closely matches how Zero Trust and gateway-based enterprise architectures work in real organizations.
+
+The capstone also improved my understanding of private versus public networking. The browser accessed VM2 using the public IP address, but VM2 communicated with VM1 using the AWS private IP address. This separation helped demonstrate how backend services can remain isolated while still being reachable through controlled proxy paths.
+
+Another major learning area was monitoring and observability. Uptime Kuma was not only used to check whether the service was reachable, but also to validate the full application path through the gateway. During the incident simulation labs, I learned how monitoring tools detect service-level failures differently from infrastructure-level failures. For example, the VM itself could remain online while the Nginx service became unavailable. Understanding this distinction is important for support and incident-response roles.
+
+The incident-response and change-management labs were especially valuable because they emphasized operational discipline rather than only technical commands. Writing acknowledgements, escalation comments, PIR documents, rollback plans, and PACE handovers demonstrated how communication and process management are critical during real incidents. The staged Git commits also showed how change-management evidence can prove that planning happened before implementation.
+
+I also learned the importance of documentation quality. Reviewer feedback highlighted that technical work alone is not sufficient if screenshots, configuration evidence, and navigation clarity are missing. This reinforced that support engineers must provide reproducible evidence and operationally useful documentation rather than only describing what was done.
+
+One limitation of the current capstone is that the architecture still uses AWS private networking instead of a complete WireGuard tunnel path. In a production-grade ZTNA architecture, traffic would normally flow through a secure tunnel with stronger identity-aware access controls and centralized policy enforcement. Similarly, production systems would use DNS names, service discovery, load balancers, and automated infrastructure management instead of static IP addresses.
+
+Overall, this capstone significantly improved my understanding of networking, monitoring, incident response, operational workflows, and infrastructure troubleshooting. More importantly, it demonstrated how individual technologies combine into a real support-engineering environment rather than functioning as isolated tools.
