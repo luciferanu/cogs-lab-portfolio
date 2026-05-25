@@ -119,25 +119,31 @@ module-5-incidents/handovers/handover-2026-05-20-p1-nginx-outage.md
 
 ## Root Cause
 
-The root cause was that the Nginx service was stopped on the VM. This caused the HTTP monitor in Uptime Kuma to fail with a connection refused error on port 80.
-
+The outage occurred because the Nginx service on the gateway VM was manually stopped during the simulation. Since the HTTP service on port 80 became unavailable, Uptime Kuma detected repeated connection refused responses and triggered the incident condition.
 The VM itself remained reachable, and Prometheus/Grafana monitoring continued to run, confirming that this was a service-level outage rather than a full infrastructure outage.
 
 ## Impact
-Severity: P1
-Affected service: Lab Nginx Gateway
-Affected users: All users depending on the gateway
-User impact: Gateway web service was unreachable
-Outage duration: Approximately 21 minutes
+
+| Field | Details |
+|---|---|
+| Severity | P1 |
+| Affected Service | Lab Nginx Gateway |
+| Affected Users | All users attempting to access the gateway |
+| User Impact | Users were unable to access the HTTP gateway service because the Nginx web service on port 80 was unavailable |
+| Business Impact | Gateway connectivity testing and application access through the lab environment were interrupted during the outage window |
+| Outage Duration | Approximately 21 minutes |
 
 ## Resolution Summary
 
 The Nginx service was restarted using sudo systemctl start nginx. After restart, Uptime Kuma detected recovery and the monitor returned to UP with a 200 - OK response.
 
-### Prevention Actions
+## Prevention Actions
 
-Add service-level monitoring for Nginx.
-Add alerting for Nginx process/service state.
-Create a runbook for Nginx restart and validation.
-Add checks to distinguish service-level outages from VM-level outages.
-Document escalation steps for P1 gateway incidents.
+| Action | Owner | Purpose |
+|---|---|---|
+| Configure Uptime Kuma HTTP monitor for `/health` endpoint every 60 seconds | Support Engineering | Detect Nginx outages faster |
+| Configure Prometheus alert when Nginx service becomes unavailable for more than 2 minutes | Monitoring Team | Reduce detection delay |
+| Add Nginx service validation to operational runbook | Operations Team | Standardize troubleshooting steps |
+| Add systemd auto-restart policy for Nginx service | Infrastructure Team | Improve automatic recovery |
+| Configure escalation process for repeated P1 gateway outages | Incident Management Team | Improve incident response coordination |
+| Create service-level dashboard for gateway availability metrics | Monitoring Team | Improve visibility into gateway health |
