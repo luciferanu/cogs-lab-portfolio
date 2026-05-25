@@ -4,7 +4,7 @@
 
 **Change ID:** CHANGE-001  
 **Type:** Normal Change  
-**Status:** Pending 
+**Status:** Implemented
 **Service:** Nginx TLS Configuration  
 **Environment:** Lab EC2 Ubuntu VM  
 
