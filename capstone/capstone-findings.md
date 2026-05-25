@@ -30,6 +30,19 @@ WireGuard IP: 10.0.0.1
 | VM1 | 13.60.163.172 | 172.31.38.99 | App server / backend target   |
 | VM2 | 13.60.52.60   | 172.31.41.52 | Nginx gateway / reverse proxy |
 
+## Environment Variables / Lab Mapping
+
+```text
+VM1_PUBLIC_IP=13.60.163.172
+VM1_PRIVATE_IP=172.31.38.99
+
+VM2_PUBLIC_IP=13.60.52.60
+VM2_PRIVATE_IP=172.31.41.52
+
+BACKEND_APP=http://172.31.38.99/
+GATEWAY_PROXY=http://13.60.52.60/app/
+```
+
 ## Step 1 — VM1 Backend Service
 
 VM1 was used as the backend application server. Nginx was already running on VM1 and served the lab application page.
@@ -69,6 +82,24 @@ server {
     }
 }
 ```
+Note:
+
+In this lab environment, the backend application IP was statically configured using the VM1 private IP:
+
+```nginx
+proxy_pass http://172.31.38.99/;
+```
+
+In a production environment, this would normally be replaced with:
+
+- internal DNS
+- service discovery
+- load balancer hostname
+- environment variables
+- container service names
+
+to avoid hardcoded infrastructure dependencies.
+
 Nginx configuration was tested successfully and reloaded.
 
 ## Step 3 — Proxy Path Validation
@@ -99,7 +130,7 @@ A Uptime Kuma monitor was created to monitor the VM2 proxy URL:
 
 -> http://13.60.52.60/app/
 
-The monitor showed UP/green, confirming that the gateway proxy path was reachable.
+The Uptime Kuma monitor continuously validated the full proxy path from VM2 to the backend application on VM1. This confirmed both gateway availability and backend reachability across the private AWS network.
 
 ![Uptime Kuma proxy green](../screenshots/capstone-uptime-kuma-proxy-green.png)
 
@@ -109,7 +140,12 @@ The capstone lab successfully connected two EC2 VMs in a gateway/backend archite
 
 ### Final working flow:
 
-Browser → VM2 Nginx Proxy → VM1 Backend App
+The architecture simulated a simplified zero-trust gateway pattern where:
+
+- VM2 acted as the externally reachable gateway/reverse proxy
+- VM1 acted as the protected backend application server
+- traffic between VMs used private AWS networking
+- monitoring validated end-to-end application reachability
 
 VM2 accepted the public HTTP request and forwarded it to VM1 using the private AWS network.
 
