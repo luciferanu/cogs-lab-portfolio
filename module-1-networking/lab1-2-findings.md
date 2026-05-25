@@ -9,7 +9,7 @@ Nginx Web Server and Self-Signed TLS Certificate Setup
 - Provider: AWS
 - Region: eu-north-1
 - OS: Ubuntu 26.04 LTS
-- Public IPv4: 16.170.245.80
+- Public IPv4: 13.60.163.172
 - VM User: ubuntu
 
 ---
@@ -40,6 +40,43 @@ When I use HTTPS with a self-signed TLS certificate, the connection is encrypted
 
 A normal trusted HTTPS certificate is issued by a trusted Certificate Authority. In this lab, I created the certificate myself using OpenSSL, so it is self-signed. Because of this, curl cannot verify that the certificate came from a trusted authority.
 
-The `-k` option tells curl to skip certificate verification.
+## Testing HTTPS Access
 
+The HTTPS endpoint was tested using curl with the `-k` option:
 
+```bash
+curl -k https://13.60.163.172
+```
+
+The `-k` option tells curl to ignore certificate trust validation errors because the lab used a self-signed certificate.
+
+Observed result:
+
+- HTTPS connection successful
+- Nginx page loaded correctly
+- TLS encryption active
+
+---
+
+## Certificate Inspection
+
+The certificate was inspected using OpenSSL:
+
+```bash
+openssl s_client -connect 13.60.163.172:443
+```
+
+Important certificate findings:
+
+| Field | Observation |
+|---|---|
+| Certificate Type | Self-signed |
+| TLS Version | TLSv1.2 / TLSv1.3 supported |
+| Port | 443 |
+| Issuer | Self-generated lab certificate 
+| Certificate Expiry | 365 days |
+| Purpose | HTTPS encryption testing |
+
+The certificate inspection confirmed that the HTTPS service was active and the Nginx server was successfully presenting a TLS certificate.
+
+The OpenSSL inspection output also confirmed that the certificate chain was self-signed, which is expected in a lab environment.
