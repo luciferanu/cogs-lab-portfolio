@@ -68,7 +68,6 @@ Customer Impact: No real customer impact because this is a lab environment
 ## Approval
 
 Approval Status: Approved and Implemented
-This change plan must be committed before execution.
 
 ---
 
