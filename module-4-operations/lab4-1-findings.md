@@ -1,3 +1,25 @@
+## GitHub Ticket Repository
+
+The actual support ticket lifecycle was performed in a separate GitHub repository:
+
+https://github.com/luciferanu/cogs-support-lab-tickets
+
+This repository contains:
+- GitHub Issues
+- Labels
+- Milestone
+- Project board
+- Internal investigation notes
+- Escalation comments
+- Resolution comments
+- Ticket lifecycle workflow
+
+### Direct References
+
+- Ticket Repository: https://github.com/luciferanu/cogs-support-lab-tickets
+- Issues Page: https://github.com/luciferanu/cogs-support-lab-tickets/issues
+- Projects Board: https://github.com/users/luciferanu/projects
+
 # Lab 4.1 — GitHub as a Support Desk
 
 ## Objective
