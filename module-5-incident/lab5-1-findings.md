@@ -119,8 +119,9 @@ module-5-incidents/handovers/handover-2026-05-20-p1-nginx-outage.md
 
 ## Root Cause
 
-The outage occurred because the Nginx service on the gateway VM was manually stopped during the simulation. Since the HTTP service on port 80 became unavailable, Uptime Kuma detected repeated connection refused responses and triggered the incident condition.
-The VM itself remained reachable, and Prometheus/Grafana monitoring continued to run, confirming that this was a service-level outage rather than a full infrastructure outage.
+The outage occurred because the Nginx service on the gateway VM was manually stopped during the simulation. Since the HTTP service on port 80 became unavailable, Uptime Kuma detected repeated connection-refused responses and triggered the incident condition.
+
+The VM itself remained reachable, and Prometheus/Grafana monitoring continued to run normally. This confirmed that the incident was a service-level outage affecting Nginx rather than a full infrastructure or VM outage.
 
 ## Impact
 
