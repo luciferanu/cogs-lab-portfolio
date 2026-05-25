@@ -149,6 +149,23 @@ Attribute mappers decide which user attributes are included in the SAML response
 
 These attributes are important because SSO applications often use them for user identification and access control.
 
+### Keycloak Navigation Path
+
+The attribute mappers were configured using the following Keycloak navigation path:
+
+```text
+Clients → https://sp.instasafe.local/saml → Client Scopes → Add Mapper → By Configuration → User Attribute
+```
+
+For each mapper, the following fields were configured:
+
+- Mapper Type
+- User Attribute
+- Friendly Name
+- SAML Attribute Name
+- SAML Attribute NameFormat
+- Single Value Attribute
+
 ![SAML Mappers](../screenshots/lab2-2-saml-mappers.png)
 
 ## Experiment 6: Download IdP Metadata
